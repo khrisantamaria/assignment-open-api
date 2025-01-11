@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Currency Exchange</h1>
+            <p class="subtitle">Real-time exchange rates</p>
+        </header>
+
+        <main>
+            <div class="converter-card">
+                <div class="converter-inputs">
+                    <div class="input-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" value="1" min="0">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="from-currency">From</label>
+                        <select id="from-currency">
+                            <option value="USD">USD - US Dollar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                        </select>
+                    </div>
+
+                    <button class="swap-btn" id="swap-currencies">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2"/>
+                            <path d="M17 14L21 10L17 6" stroke="currentColor" stroke-width="2"/>
+                            <path d="M21 10H3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M3 14H21" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+
+                    <div class="input-group">
+                        <label for="to-currency">To</label>
+                        <select id="to-currency">
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="USD">USD - US Dollar</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <div class="conversion-result">
+                        <span class="amount">1 USD = </span>
+                        <span class="converted-amount">0.85 EUR</span>
+                    </div>
+                    <p class="last-updated">Last updated: <span id="update-time">Just now</span></p>
+                </div>
+            </div>
+
+            <div class="popular-rates">
+                <h2>Popular Exchange Rates</h2>
+                <div class="rates-grid" id="popular-rates-grid">
+                    <!-- Rates will be populated by JavaScript -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Data provided by FreeCurrencyAPI</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
